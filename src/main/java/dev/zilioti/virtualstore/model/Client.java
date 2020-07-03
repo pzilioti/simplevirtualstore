@@ -1,11 +1,20 @@
 package dev.zilioti.virtualstore.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "client")
 public class Client {
 
+    @Id
+    @Column(name = "idclient")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String name;
     private String password;
 
+    public Client(){}
 
     public Client(Integer id, String name, String password) {
         this.id = id;

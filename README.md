@@ -1,4 +1,4 @@
-#This is a Simple Virtual Store
+# This is a Simple Virtual Store
 
 It's a REST webservice that supports register of clients, products and orders.
 
