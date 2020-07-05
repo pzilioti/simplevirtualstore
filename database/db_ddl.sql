@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS `simplevirtualstore`.`client` (
   `idclient` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idclient`))
+  PRIMARY KEY (`idclient`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
@@ -73,6 +74,18 @@ CREATE TABLE IF NOT EXISTS `simplevirtualstore`.`order_has_product` (
     REFERENCES `simplevirtualstore`.`product` (`idproduct`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `simplevirtualstore`.`user_authetication`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `simplevirtualstore`.`user_authetication` (
+  `iduser_authetication` INT NOT NULL AUTO_INCREMENT,
+  `name_user` VARCHAR(45) NOT NULL,
+  `token` VARCHAR(200) NOT NULL,
+  PRIMARY KEY (`iduser_authetication`),
+  UNIQUE INDEX `name_user_UNIQUE` (`name_user` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 

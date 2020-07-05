@@ -59,4 +59,9 @@ public class Client {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public void cleanPassword(){
+        setPassword(null);
+    }
+
 }

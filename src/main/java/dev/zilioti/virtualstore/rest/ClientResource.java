@@ -18,12 +18,13 @@ import java.util.List;
 public class ClientResource {
 
     @Inject
-    ClientDAO clientDAO;
+    private ClientDAO clientDAO;
 
     @GET
     public Response getAll() {
         List<Client> clientList = new ArrayList<Client>();
         clientList = clientDAO.getAllCLients();
+        clientList.stream().forEach(c -> c.cleanPassword());
         return Response.status(200).entity(clientList).build();
     }
 
@@ -32,8 +33,9 @@ public class ClientResource {
     public Response getClient(@PathParam("id") Integer id) {
         try{
             Client client = clientDAO.getClientById(id);
+            client.cleanPassword();
             return Response.status(200).entity(client).build();
-        }catch(NoResultException e){
+        }catch(NoResultException | NullPointerException e){
             return Response.status(Response.Status.NOT_FOUND).entity(new GenericResponse("error","client not found")).build();
         }
     }
