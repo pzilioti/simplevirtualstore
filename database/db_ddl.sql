@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `simplevirtualstore`.`product` (
   `idproduct` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(200) NOT NULL,
-  `price` INT NOT NULL,
+  `price` FLOAT(10,2) NOT NULL,
   PRIMARY KEY (`idproduct`))
 ENGINE = InnoDB;
 
