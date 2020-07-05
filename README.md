@@ -10,19 +10,19 @@ This API have 3 entities, Client, Product and Order. Each one have the following
 ### Client
 GET operation:
 ```
-http://localhost:8080/virtualstore/rest/clients
+https://zilioti.dev/virtualstore/rest/clients
 ```
 Returns a list of all clients
 
 GET/{id} operation:
 ```
-http://localhost:8080/virtualstore/rest/clients/1
+https://zilioti.dev/virtualstore/rest/clients/1
 ```
 Returns the client with ID = 1
 
 POST operation:
 ```
-http://localhost:8080/virtualstore/rest/clients
+https://zilioti.dev/virtualstore/rest/clients
 ```
 With this payload in JSON format:
 ```
@@ -33,19 +33,19 @@ Creates a client named "robson" with "test" password
 ### Product
 GET operation:
 ```
-http://localhost:8080/virtualstore/rest/products
+https://zilioti.dev/virtualstore/rest/products
 ```
 Returns a list of all products
 
 GET/{id} operation:
 ```
-http://localhost:8080/virtualstore/rest/products/1
+https://zilioti.dev/virtualstore/rest/products/1
 ```
 Returns the product with ID = 1
 
 POST operation:
 ```
-http://localhost:8080/virtualstore/rest/products
+https://zilioti.dev/virtualstore/rest/products
 ```
 With this payload in JSON format:
 ```
@@ -56,13 +56,13 @@ Creates a product named "Bed"
 ### Order
 GET operation:
 ```
-http://localhost:8080/virtualstore/rest/orders
+https://zilioti.dev/virtualstore/rest/orders
 ```
 Returns a list of all orders
 
 GET/{id} operation:
 ```
-http://localhost:8080/virtualstore/rest/orders/1
+https://zilioti.dev/virtualstore/rest/orders/1
 ```
 Returns the order with ID = 1
 
@@ -72,7 +72,7 @@ For the POST operation, the user need to be authenticated.
 
 Authentication request:
 ```
-http://localhost:8080/virtualstore/rest/authentication
+https://zilioti.dev/virtualstore/rest/authentication
 ```
 With this payload in JSON format:
 ```
@@ -82,7 +82,7 @@ Gives an authentication token for the user named "peter", if the password is cor
 
 Now the POST request can be made with the authentication token in the HTTP Authorization header
 ```
-http://localhost:8080/virtualstore/rest/orders
+https://zilioti.dev/virtualstore/rest/orders
 ```
 With this payload in JSON format:
 ```
